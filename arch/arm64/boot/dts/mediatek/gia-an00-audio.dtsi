@@ -1,0 +1,253 @@
+// SPDX-License-Identifier: GPL-2.0
+/*
+ * HONOR GIA-AN00 / MT6877V/ZA 设备树分片
+ * 由实机反编译 device.dts 自动还原，节点内容保持原样
+ */
+
+/* 14 个顶层节点 */
+
+	accdet: accdet {
+			compatible = "mediatek,pmic-accdet";
+			phandle = <0x140>;
+			accdet-mic-vol = <0x08>;
+			headset-mode-setting = <0x500 0x500 0x01 0x1f0 0x800 0x800 0x20 0x44 0x04 0x01 0x05 0x03 0x03 0x05 0x0e>;
+			accdet-plugout-debounce = <0x01>;
+			accdet-mic-mode = <0x02>;
+			headset-three-key-threshold = <0x00 0x50 0xc0 0x190>;
+			headset-three-key-threshold-CDD = <0x00 0x79 0xc0 0x258>;
+			headset-four-key-threshold = <0x00 0x3a 0x79 0xc0 0x190>;
+			eint_use_ext_res = <0x00>;
+			status = "okay";
+		};
+
+	afe: mt6877-afe-pcm@11210000 {
+			compatible = "mediatek,mt6877-sound";
+			reg = <0x00 0x11210000 0x00 0x2000>;
+			interrupts = <0x00 0xf6 0x04>;
+			topckgen = <0x48>;
+			infracfg_ao = <0x40>;
+			clocks = <0x9b 0x00 0x9b 0x01 0x9b 0x02 0x9b 0x03 0x9b 0x04 0x9b 0x05 0x9b 0x06 0x9b 0x07 0x9b 0x08 0x9b 0x09 0x9b 0x0a 0x9b 0x0b 0x9b 0x0c 0x9b 0x0d 0x9b 0x0e 0x9b 0x0f 0x9b 0x10 0x9b 0x11 0x9b 0x12 0x9b 0x13 0x9b 0x14 0x9b 0x15 0x9b 0x16 0x40 0x22 0x40 0x27 0x41 0x0e 0x48 0x94 0x48 0xae 0x48 0x95 0x48 0x04 0x48 0xa6 0x48 0x28 0x48 0xa7 0x48 0x2c 0x48 0xa2 0x48 0x2a 0x48 0xa3 0x48 0x2e 0x48 0xb9 0x48 0xba 0x48 0xbb 0x48 0xbc 0x48 0xbd 0x48 0xbe 0x48 0xbf 0x48 0xc0 0x48 0xc1 0x48 0xc2 0x48 0xc3 0x48 0xc4 0x48 0xc5 0x48 0xc6 0x48 0xc7 0x48 0xc8 0x48 0xc9 0x48 0xca 0x48 0xcb 0x48 0xcc 0x48 0xcd 0x48 0x43>;
+			clock-names = "aud_afe_clk", "aud_22m_clk", "aud_24m_clk", "aud_apll2_tuner_clk", "aud_apll1_tuner_clk", "aud_tdm_clk", "aud_adc_clk", "aud_dac_clk", "aud_dac_predis_clk", "aud_tml_clk", "aud_nle_clk", "aud_consys_src_clk", "aud_general1_src_clk", "aud_general2_src_clk", "aud_dac_hires_clk", "aud_adc_hires_clk", "aud_adc_hires_tml", "aud_adda6_adc_clk", "aud_adda6_adc_hires_clk", "aud_3rd_dac_clk", "aud_3rd_dac_predis_clk", "aud_3rd_dac_tml", "aud_3rd_dac_hires_clk", "aud_infra_clk", "aud_infra_26m_clk", "scp_sys_audio", "top_mux_audio", "top_mux_audio_h", "top_mux_audio_int", "top_mainpll_d4_d4", "top_mux_aud_1", "top_apll1_ck", "top_mux_aud_2", "top_apll2_ck", "top_mux_aud_eng1", "top_apll1_d4", "top_mux_aud_eng2", "top_apll2_d4", "top_i2s0_m_sel", "top_i2s1_m_sel", "top_i2s2_m_sel", "top_i2s3_m_sel", "top_i2s4_m_sel", "top_i2s5_m_sel", "top_i2s6_m_sel", "top_i2s7_m_sel", "top_i2s8_m_sel", "top_i2s9_m_sel", "top_apll12_div0", "top_apll12_div1", "top_apll12_div2", "top_apll12_div3", "top_apll12_div4", "top_apll12_divb", "top_apll12_div5", "top_apll12_div6", "top_apll12_div7", "top_apll12_div8", "top_apll12_div9", "top_clk26m_clk";
+			pinctrl-names = "aud_clk_mosi_off", "aud_clk_mosi_on", "aud_dat_miso0_off", "aud_dat_miso0_on", "aud_dat_miso1_off", "aud_dat_miso1_on", "aud_dat_miso2_off", "aud_dat_miso2_on", "aud_dat_mosi_off", "aud_dat_mosi_on", "aud_dat_mosi_ch34_off", "aud_dat_mosi_ch34_on", "aud_gpio_i2s0_off", "aud_gpio_i2s0_on", "aud_gpio_i2s3_off", "aud_gpio_i2s3_on", "vow_gpio_off", "vow_gpio_on";
+			pinctrl-0 = <0x9c>;
+			pinctrl-1 = <0x9d>;
+			pinctrl-2 = <0x9e>;
+			pinctrl-3 = <0x9f>;
+			pinctrl-4 = <0xa0>;
+			pinctrl-5 = <0xa1>;
+			pinctrl-6 = <0xa2>;
+			pinctrl-7 = <0xa3>;
+			pinctrl-8 = <0xa4>;
+			pinctrl-9 = <0xa5>;
+			pinctrl-10 = <0xa6>;
+			pinctrl-11 = <0xa7>;
+			pinctrl-12 = <0xa8>;
+			pinctrl-13 = <0xa9>;
+			pinctrl-14 = <0xaa>;
+			pinctrl-15 = <0xab>;
+			pinctrl-16 = <0xac>;
+			pinctrl-17 = <0xad>;
+			phandle = <0xaf>;
+		};
+
+	audio_cust_info: audio_cust_info {
+			phandle = <0x1c8>;
+			compatible = "mtk,audio_cust_info";
+			status = "ok";
+		};
+
+	audio_hw_config: audio_hw_config {
+			phandle = <0x1c6>;
+			product_name = "mt6877";
+			mic_silence_continuous_check_times = "5";
+			speaker_test_content = "speaker";
+			audio_param_path = "odm/etc/audio/audio_param";
+			audio_param_ce_path = "odm/etc/audio/audio_param_ce";
+			simplepa_support_adsp = "true";
+			support_zero_volume = "true";
+			third_platform_name = "mt6877";
+			third_audio_hal_name = "audio.primary.mt6877.so";
+			support_policy_delay_update = "true";
+	
+			hardware_info {
+				mic_num = "2";
+				mic_type = "0003";
+			};
+	
+			audio_capability {
+				backmic_record_enable = "true";
+				notification_enable = "true";
+				asr_vibrate_support = "true";
+				soundtrigger_version = "2.0";
+				soundtrigger_enhance_enable = "true";
+				soundtrigger_mic_info = "3";
+				soundtrigger_kws1_feature = "2";
+				mic_analog_gain = "24";
+				wakeup_hisiengine = "true";
+				asr_enhance_mic_choose = "1";
+				usb_compatibility_report = "false";
+				usb_analog_hs_report = "false";
+				temperature_check = "true";
+				temperature_zone = "mtkts_usbntc";
+				oneshot_disable = "true";
+			};
+		};
+
+	audio_sram@11212000 {
+			compatible = "mediatek,audio_sram";
+			reg = <0x00 0x11212000 0x00 0x18000>;
+			prefer_mode = <0x00>;
+			mode_size = <0x12000 0x18000>;
+			block_size = <0x1000>;
+		};
+
+	btcvsd_snd: mtk-btcvsd-snd@18830000 {
+			compatible = "mediatek,mtk-btcvsd-snd";
+			reg = <0x00 0x18830000 0x00 0x2000 0x00 0x18840000 0x00 0x20000>;
+			interrupts = <0x00 0x1cd 0x04>;
+			mediatek,infracfg = <0x40>;
+			mediatek,offset = <0xf00 0x800 0x140 0x144 0x148>;
+			disable_write_silence = <0x01>;
+			phandle = <0x1cd>;
+		};
+
+	lk_smartpa_vendor: lk_smartpa_vendor {
+			phandle = <0x1cc>;
+		};
+
+	mt6359_snd: mt6359_snd {
+			compatible = "mediatek,mt6359-sound";
+			mediatek,pwrap-regmap = <0x55>;
+			phandle = <0xae>;
+		};
+
+	mt_soc_playback_offload {
+			compatible = "mediatek,mt_soc_offload_common";
+		};
+
+	ptp3: ptp3 {
+			compatible = "mediatek,ptp3";
+			brisket2_InitPath = <0xffffffff>;
+			cttBitEn = <0xff>;
+			cttImax_0 = <0x1ffe>;
+			cttImax_1 = <0x1ffe>;
+			cttImax_2 = <0x1ffe>;
+			cttImax_3 = <0x1ffe>;
+			cttImax_4 = <0x1ffe>;
+			cttImax_5 = <0x1ffe>;
+			cttImax_6 = <0x1ffe>;
+			cttImax_7 = <0x1ffe>;
+			cttTmax_0 = <0xff>;
+			cttTmax_1 = <0xff>;
+			cttTmax_2 = <0xff>;
+			cttTmax_3 = <0xff>;
+			cttTmax_4 = <0xff>;
+			cttTmax_5 = <0xff>;
+			cttTmax_6 = <0xff>;
+			cttTmax_7 = <0xff>;
+			cttImaxDelta_0 = <0xc8>;
+			cttImaxDelta_1 = <0xc8>;
+			cttImaxDelta_2 = <0xc8>;
+			cttImaxDelta_3 = <0xc8>;
+			cttImaxDelta_4 = <0xc8>;
+			cttImaxDelta_5 = <0xc8>;
+			cttImaxDelta_6 = <0xc8>;
+			cttImaxDelta_7 = <0xc8>;
+			cttTmaxDelta_0 = <0x0a>;
+			cttTmaxDelta_1 = <0x0a>;
+			cttTmaxDelta_2 = <0x0a>;
+			cttTmaxDelta_3 = <0x0a>;
+			cttTmaxDelta_4 = <0x0a>;
+			cttTmaxDelta_5 = <0x0a>;
+			cttTmaxDelta_6 = <0x0a>;
+			cttTmaxDelta_7 = <0x0a>;
+			drcc_state = <0x00>;
+			drcc0_Vref = <0xff>;
+			drcc1_Vref = <0xff>;
+			drcc2_Vref = <0xff>;
+			drcc3_Vref = <0xff>;
+			drcc4_Vref = <0xff>;
+			drcc5_Vref = <0xff>;
+			drcc6_Vref = <0xff>;
+			drcc7_Vref = <0xff>;
+			drcc0_Code = <0xff>;
+			drcc1_Code = <0xff>;
+			drcc2_Code = <0xff>;
+			drcc3_Code = <0xff>;
+			drcc4_Code = <0xff>;
+			drcc5_Code = <0xff>;
+			drcc6_Code = <0xff>;
+			drcc7_Code = <0xff>;
+			drcc4_EdgeSel = <0xff>;
+			drcc5_EdgeSel = <0xff>;
+			drcc6_EdgeSel = <0xff>;
+			drcc7_EdgeSel = <0xff>;
+			pdp_state = <0xc2>;
+			pdp_state_pinctl = <0x00>;
+			dt_state = <0x00>;
+			dt_state_pinctl = <0x00>;
+			cinst_doe_init = <0x00>;
+			cinst_doe_ls_enable = <0xc0>;
+			cinst_doe_ls_period = <0xff>;
+			cinst_doe_ls_credit = <0xff>;
+			cinst_doe_vx_enable = <0xc0>;
+			cinst_doe_vx_period = <0xff>;
+			cinst_doe_vx_credit = <0xff>;
+			cinst_doe_ls_low_en = <0x00>;
+			cinst_doe_ls_low_period = <0xff>;
+			cinst_doe_vx_low_en = <0x00>;
+			cinst_doe_vx_low_period = <0xff>;
+			cinst_doe_ls_const_en = <0x00>;
+			cinst_doe_vx_const_en = <0x00>;
+			igBitEn = <0xf0>;
+			lreBitEn = <0xf0>;
+			phandle = <0x1bf>;
+		};
+
+	smartpakit: smartpakit {
+			phandle = <0x1c9>;
+		};
+
+	snd_audio_dsp: snd_audio_dsp {
+			compatible = "mediatek,snd_audio_dsp";
+			mtk_dsp_voip = <0x05 0xffffffff 0xffffffff 0xffffffff 0x30000>;
+			mtk_dsp_primary = <0x05 0xffffffff 0xffffffff 0xffffffff 0x30000>;
+			mtk_dsp_offload = <0x00 0xffffffff 0xffffffff 0xffffffff 0x400000>;
+			mtk_dsp_deep = <0x05 0xffffffff 0xffffffff 0xffffffff 0x30000>;
+			mtk_dsp_playback = <0x01 0x04 0xffffffff 0x14 0x30000>;
+			mtk_dsp_music = <0x01 0xffffffff 0xffffffff 0xffffffff 0x00>;
+			mtk_dsp_capture1 = <0x00 0xffffffff 0x0d 0x13 0x20000>;
+			mtk_dsp_a2dp = <0x00 0xffffffff 0xffffffff 0xffffffff 0x40000>;
+			mtk_dsp_dataprovider = <0x00 0xffffffff 0x0f 0xffffffff 0x30000>;
+			mtk_dsp_call_final = <0x05 0x04 0x10 0x14 0x18000>;
+			mtk_dsp_fast = <0x05 0xffffffff 0xffffffff 0xffffffff 0x5000>;
+			mtk_dsp_ktv = <0x00 0x08 0x12 0xffffffff 0x10000>;
+			mtk_dsp_capture_raw = <0x00 0xffffffff 0xffffffff 0xffffffff 0x20000>;
+			mtk_dsp_fm = <0x00 0xffffffff 0x10 0xffffffff 0x10000>;
+			mtk_dsp_ver = <0x01>;
+			swdsp_smartpa_process_enable = <0x00>;
+			mtk_dsp_mem_afe = <0x01 0x40000>;
+			phandle = <0xb0>;
+		};
+
+	snd_scp_ultra: snd_scp_ultra {
+			compatible = "mediatek,snd_scp_ultra";
+			scp_ultra_dl_memif_id = <0x07>;
+			scp_ultra_ul_memif_id = <0x0f>;
+			phandle = <0x1c5>;
+		};
+
+	sound: sound {
+			compatible = "mediatek,mt6877-mt6359-sound";
+			mediatek,audio-codec = <0xae>;
+			mediatek,platform = <0xaf>;
+			mediatek,snd_audio_dsp = <0xb0>;
+			mtk_spk_i2s_out = <0x03>;
+			mtk_spk_i2s_in = <0x00>;
+			phandle = <0x1c4>;
+	
+			mediatek,speaker-codec {
+				sound-dai = <0xb1>;
+			};
+		};
+

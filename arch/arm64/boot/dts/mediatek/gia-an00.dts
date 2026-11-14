@@ -1,0 +1,31 @@
+// SPDX-License-Identifier: GPL-2.0
+/*
+ * 荣耀 60 SE / HONOR GIA-AN00 (MT6877V/ZA — 天玑 900)
+ * 标准内核设备树入口。原文件带完整 label（471 个，无重复），
+ * 节点内同时保留数字 phandle，两种引用方式都自洽。
+ */
+
+/dts-v1/;
+
+
+#include "gia-an00-core.dtsi"
+#include "gia-an00-soc.dtsi"
+#include "gia-an00-display.dtsi"
+#include "gia-an00-touch.dtsi"
+#include "gia-an00-camera.dtsi"
+#include "gia-an00-audio.dtsi"
+#include "gia-an00-power.dtsi"
+#include "gia-an00-connectivity.dtsi"
+#include "gia-an00-storage.dtsi"
+#include "gia-an00-usb.dtsi"
+#include "gia-an00-multimedia.dtsi"
+#include "gia-an00-thermal.dtsi"
+#include "gia-an00-misc.dtsi"
+
+/ {
+	model = "MT6877V/ZA";
+	compatible = "mediatek,MT6877";
+	interrupt-parent = <0x01>;
+	#address-cells = <0x02>;
+	#size-cells = <0x02>;
+};

@@ -1,0 +1,269 @@
+// SPDX-License-Identifier: GPL-2.0
+/*
+ * HONOR GIA-AN00 / MT6877V/ZA 设备树分片
+ * 由实机反编译 device.dts 自动还原，节点内容保持原样
+ */
+
+/* 24 个顶层节点 */
+
+	camsv1@1a090000 {
+			compatible = "mediatek,camsv1";
+			reg = <0x00 0x1a090000 0x00 0x1000>;
+			interrupts = <0x00 0x18d 0x04>;
+		};
+
+	camsv2@1a091000 {
+			compatible = "mediatek,camsv2";
+			reg = <0x00 0x1a091000 0x00 0x1000>;
+			interrupts = <0x00 0x18e 0x04>;
+		};
+
+	camsv3@1a092000 {
+			compatible = "mediatek,camsv3";
+			reg = <0x00 0x1a092000 0x00 0x1000>;
+			interrupts = <0x00 0x18f 0x04>;
+		};
+
+	camsv4@1a093000 {
+			compatible = "mediatek,camsv4";
+			reg = <0x00 0x1a093000 0x00 0x1000>;
+			interrupts = <0x00 0x190 0x04>;
+		};
+
+	camsv5@1a094000 {
+			compatible = "mediatek,camsv5";
+			reg = <0x00 0x1a094000 0x00 0x1000>;
+			interrupts = <0x00 0x191 0x04>;
+		};
+
+	camsv6@1a095000 {
+			compatible = "mediatek,camsv6";
+			reg = <0x00 0x1a095000 0x00 0x1000>;
+			interrupts = <0x00 0x192 0x04>;
+		};
+
+	camsv7@1a096000 {
+			compatible = "mediatek,camsv7";
+			reg = <0x00 0x1a096000 0x00 0x1000>;
+			interrupts = <0x00 0x196 0x04>;
+		};
+
+	camsv8@1a097000 {
+			compatible = "mediatek,camsv8";
+			reg = <0x00 0x1a097000 0x00 0x1000>;
+			interrupts = <0x00 0x197 0x04>;
+		};
+
+	cpe_controller_mcu@13fb9c00 {
+			compatible = "mediatek,cpe_controller_mcu";
+			reg = <0x00 0x13fb9c00 0x00 0x100>;
+		};
+
+	cpe_controller_sensor@13fb7000 {
+			compatible = "mediatek,cpe_controller_sensor";
+			reg = <0x00 0x13fb7000 0x00 0x100>;
+		};
+
+	kd_camera_hw1: kd_camera_hw1@1a004000 {
+			compatible = "mediatek,imgsensor";
+			phandle = <0xfb>;
+			status = "okay";
+			vcamio-supply = <0x119>;
+		};
+
+	mediatek_camera: mediatek_camera {
+			compatible = "mediatek,camera";
+			phandle = <0x15a>;
+			max-cam-num = "4";
+			version = <0x01>;
+	
+			camera0 {
+				compatible = "honor,camera0";
+				sensor-index = "0";
+				mclk-index = "0";
+				csi-port = "3";
+				csi-dir = "0";
+				bit-order = "0";
+				orientation = "90";
+				sensor-hfov = "67";
+				sensor-vfov = "49";
+				i2c-dev-index = <0x00>;
+				pin-type = "mclk", "avdd_en", "dvdd", "dvdd_en", "dvdd_sel", "dovdd", "afvdd", "rst";
+				pin-id = <0x00 0x02 0x01 0x02 0x02 0x01 0x01 0x02>;
+				pinctrl-names = "rst_0", "rst_1", "dvdd_en_0", "dvdd_en_1", "dvdd_sel_0", "dvdd_sel_1", "avdd_en_0", "avdd_en_1", "mclk_off", "mclk_2mA", "mclk_4mA", "mclk_6mA", "mclk_8mA";
+				pinctrl-0 = <0x1dd>;
+				pinctrl-1 = <0x1de>;
+				pinctrl-2 = <0x1df>;
+				pinctrl-3 = <0x1e0>;
+				pinctrl-4 = <0x1e1>;
+				pinctrl-5 = <0x1e2>;
+				pinctrl-6 = <0x1e3>;
+				pinctrl-7 = <0x1e4>;
+				pinctrl-8 = <0x1e5>;
+				pinctrl-9 = <0x1e6>;
+				pinctrl-10 = <0x1e7>;
+				pinctrl-11 = <0x1e8>;
+				pinctrl-12 = <0x1e9>;
+				cam_vcamio-supply = <0x119>;
+				cam_vcamaf-supply = <0x124>;
+				cam_vcamd-supply = <0x153>;
+				fastmode_regulators = "cam_vcamd";
+			};
+	
+			camera1 {
+				compatible = "honor,camera1";
+				sensor-index = "1";
+				mclk-index = "3";
+				csi-port = "2";
+				csi-dir = "1";
+				bit-order = "0";
+				orientation = "270";
+				sensor-hfov = "63";
+				sensor-vfov = "40";
+				i2c-dev-index = <0x01>;
+				pin-type = "mclk", "avdd", "dvdd", "dvdd_en", "dvdd_sel", "dovdd", "rst";
+				pin-id = <0x00 0x01 0x01 0x02 0x02 0x01 0x02>;
+				pinctrl-names = "rst_0", "rst_1", "dvdd_en_0", "dvdd_en_1", "dvdd_sel_0", "dvdd_sel_1", "mclk_off", "mclk_2mA", "mclk_4mA", "mclk_6mA", "mclk_8mA";
+				pinctrl-0 = <0x1ea>;
+				pinctrl-1 = <0x1eb>;
+				pinctrl-2 = <0x1ec>;
+				pinctrl-3 = <0x1ed>;
+				pinctrl-4 = <0x1ee>;
+				pinctrl-5 = <0x1ef>;
+				pinctrl-6 = <0x1f0>;
+				pinctrl-7 = <0x1f1>;
+				pinctrl-8 = <0x1f2>;
+				pinctrl-9 = <0x1f3>;
+				pinctrl-10 = <0x1f4>;
+				cam_vcamio-supply = <0x119>;
+				cam_vcama-supply = <0xb9>;
+				cam_vcamd-supply = <0x153>;
+				fastmode_regulators = "cam_vcamd";
+			};
+	
+			camera2 {
+				compatible = "honor,camera2";
+				sensor-index = "2";
+				mclk-index = "1";
+				csi-port = "1";
+				csi-dir = "0";
+				bit-order = "0";
+				orientation = "90";
+				sensor-hfov = "75";
+				sensor-vfov = "60";
+				i2c-dev-index = <0x02>;
+				pin-type = "mclk", "avdd", "dvdd", "dvdd_en", "dvdd_sel", "dovdd", "rst";
+				pin-id = <0x00 0x01 0x01 0x02 0x02 0x01 0x02>;
+				pinctrl-names = "rst_0", "rst_1", "dvdd_en_0", "dvdd_en_1", "dvdd_sel_0", "dvdd_sel_1", "mclk_off", "mclk_2mA", "mclk_4mA", "mclk_6mA", "mclk_8mA";
+				pinctrl-0 = <0x1f5>;
+				pinctrl-1 = <0x1f6>;
+				pinctrl-2 = <0x1f7>;
+				pinctrl-3 = <0x1f8>;
+				pinctrl-4 = <0x1f9>;
+				pinctrl-5 = <0x1fa>;
+				pinctrl-6 = <0x1fb>;
+				pinctrl-7 = <0x1fc>;
+				pinctrl-8 = <0x1fd>;
+				pinctrl-9 = <0x1fe>;
+				pinctrl-10 = <0x1ff>;
+				cam_vcamio-supply = <0x119>;
+				cam_vcama-supply = <0xb9>;
+				cam_vcamd-supply = <0x153>;
+				fastmode_regulators = "cam_vcamd";
+			};
+	
+			camera3 {
+				compatible = "honor,camera3";
+				sensor-index = "4";
+				mclk-index = "1";
+				csi-port = "0";
+				csi-dir = "0";
+				bit-order = "0";
+				orientation = "90";
+				sensor-hfov = "75";
+				sensor-vfov = "60";
+				i2c-dev-index = <0x02>;
+				pin-type = "mclk", "avdd", "dovdd", "pwdn";
+				pin-id = <0x00 0x01 0x01 0x02>;
+				pinctrl-names = "pwdn_0", "pwdn_1", "mclk_off", "mclk_2mA", "mclk_4mA", "mclk_6mA", "mclk_8mA";
+				pinctrl-0 = <0x200>;
+				pinctrl-1 = <0x201>;
+				pinctrl-2 = <0x202>;
+				pinctrl-3 = <0x203>;
+				pinctrl-4 = <0x204>;
+				pinctrl-5 = <0x205>;
+				pinctrl-6 = <0x206>;
+				cam_vcamio-supply = <0x119>;
+				cam_vcama-supply = <0xb9>;
+			};
+		};
+
+	mipi_tx_config0: mipi_tx_config@11e50000 {
+			compatible = "mediatek,mipi_tx_config0", "mediatek,mt6877-mipi-tx";
+			reg = <0x00 0x11e50000 0x00 0x1000>;
+			clocks = <0x35>;
+			#clock-cells = <0x00>;
+			#phy-cells = <0x00>;
+			clock-output-names = "mipi_tx0_pll";
+			phandle = <0x6c>;
+		};
+
+	product_name_camera: product_name_camera {
+			compatible = "mediatek, camera_product";
+			product-name = "gina";
+			phandle = <0x179>;
+			cam-isp-dsm-enabled = <0x01>;
+		};
+
+	seninf1@1a004000 {
+			compatible = "mediatek,seninf1";
+			reg = <0x00 0x1a004000 0x00 0x1000>;
+		};
+
+	seninf2@1a005000 {
+			compatible = "mediatek,seninf2";
+			reg = <0x00 0x1a005000 0x00 0x1000>;
+		};
+
+	seninf3@1a006000 {
+			compatible = "mediatek,seninf3";
+			reg = <0x00 0x1a006000 0x00 0x1000>;
+		};
+
+	seninf4@1a007000 {
+			compatible = "mediatek,seninf4";
+			reg = <0x00 0x1a007000 0x00 0x1000>;
+		};
+
+	seninf5@1a008000 {
+			compatible = "mediatek,seninf5";
+			reg = <0x00 0x1a008000 0x00 0x1000>;
+		};
+
+	seninf6@1a009000 {
+			compatible = "mediatek,seninf6";
+			reg = <0x00 0x1a009000 0x00 0x1000>;
+		};
+
+	seninf7@1a00a000 {
+			compatible = "mediatek,seninf7";
+			reg = <0x00 0x1a00a000 0x00 0x1000>;
+		};
+
+	seninf8@1a00b000 {
+			compatible = "mediatek,seninf8";
+			reg = <0x00 0x1a00b000 0x00 0x1000>;
+		};
+
+	seninf_top@1a004000 {
+			compatible = "mediatek,seninf_top";
+			reg = <0x00 0x1a004000 0x00 0x1000>;
+			clocks = <0x41 0x13 0x41 0x10 0x41 0x11 0x41 0x12 0x68 0x04 0x48 0x9d 0x48 0x9e 0x48 0x9f 0x48 0xa0 0x48 0x8a 0x48 0x8b 0x48 0x8c 0x48 0x8d 0x48 0x8e 0x48 0x27 0x48 0x26 0x48 0x44 0x48 0x25 0x48 0x43 0x48 0x24 0x48 0x1f 0x48 0x03 0x48 0x19>;
+			clock-names = "SCP_SYS_CSI", "SCP_SYS_CAM", "ISP_SCP_SYS_RAWA", "ISP_SCP_SYS_RAWB", "CAMSYS_SENINF_CGPDN", "TOP_MUX_SENINF", "TOP_MUX_SENINF1", "TOP_MUX_SENINF2", "TOP_MUX_SENINF3", "TOP_MUX_CAMTG", "TOP_MUX_CAMTG2", "TOP_MUX_CAMTG3", "TOP_MUX_CAMTG4", "TOP_MUX_CAMTG5", "TOP_UNIVP_192M_D32", "TOP_UNIVP_192M_D16", "TOP_F26M_CK_D2", "TOP_UNIVP_192M_D8", "TOP_CLK26M", "TOP_UNIVP_192M_D4", "TOP_UNIVPLL_D6_D8", "TOP_UNIVP_D4_D2", "TOP_MAINP_D5";
+		};
+
+	sensor_network_0@13fcf000 {
+			compatible = "mediatek,sensor_network_0";
+			reg = <0x00 0x13fcf000 0x00 0x1000>;
+		};
+

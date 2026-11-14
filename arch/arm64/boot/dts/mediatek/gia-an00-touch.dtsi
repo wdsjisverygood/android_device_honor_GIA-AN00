@@ -1,0 +1,15 @@
+// SPDX-License-Identifier: GPL-2.0
+/*
+ * HONOR GIA-AN00 / MT6877V/ZA 设备树分片
+ * 由实机反编译 device.dts 自动还原，节点内容保持原样
+ */
+
+/* 1 个顶层节点 */
+
+	touch: touch {
+			compatible = "goodix,touch";
+			phandle = <0x1c1>;
+			vtouch-supply = <0xba>;
+			status = "okay";
+		};
+

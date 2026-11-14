@@ -1,0 +1,43 @@
+// SPDX-License-Identifier: GPL-2.0
+/*
+ * HONOR GIA-AN00 / MT6877V/ZA 设备树分片
+ * 由实机反编译 device.dts 自动还原，节点内容保持原样
+ */
+
+/* 5 个顶层节点 */
+
+	tboard_thermistor1: thermal-sensor1 {
+			compatible = "mediatek,mtboard-thermistor1";
+			io-channels = <0x52 0x00>;
+			io-channel-names = "thermistor-ch0";
+			phandle = <0x180>;
+		};
+
+	tboard_thermistor2: thermal-sensor2 {
+			compatible = "mediatek,mtboard-thermistor2";
+			io-channels = <0x52 0x01>;
+			io-channel-names = "thermistor-ch1";
+			phandle = <0x181>;
+		};
+
+	tboard_thermistor3: thermal-sensor3 {
+			compatible = "mediatek,mtboard-thermistor3";
+			io-channels = <0x52 0x02>;
+			io-channel-names = "thermistor-ch2";
+			phandle = <0x182>;
+		};
+
+	tboard_thermistor4: thermal-sensor4 {
+			compatible = "mediatek,mtboard-thermistor4";
+			io-channels = <0x52 0x03>;
+			io-channel-names = "thermistor-ch3";
+			phandle = <0x183>;
+		};
+
+	tboard_thermistor5: thermal-sensor5 {
+			compatible = "mediatek,mtboard-thermistor5";
+			io-channels = <0x52 0x06>;
+			io-channel-names = "thermistor-ch4";
+			phandle = <0x184>;
+		};
+

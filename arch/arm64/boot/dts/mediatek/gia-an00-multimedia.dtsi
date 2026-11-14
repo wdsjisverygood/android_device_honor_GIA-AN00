@@ -1,0 +1,183 @@
+// SPDX-License-Identifier: GPL-2.0
+/*
+ * HONOR GIA-AN00 / MT6877V/ZA 设备树分片
+ * 由实机反编译 device.dts 自动还原，节点内容保持原样
+ */
+
+/* 27 个顶层节点 */
+
+	cam1@1a030000 {
+			compatible = "mediatek,cam1";
+			reg = <0x00 0x1a030000 0x00 0x8000>;
+			interrupts = <0x00 0x188 0x04>;
+		};
+
+	cam1_inner@1a038000 {
+			compatible = "mediatek,cam1_inner";
+			reg = <0x00 0x1a038000 0x00 0x8000>;
+		};
+
+	cam2@1a050000 {
+			compatible = "mediatek,cam2";
+			reg = <0x00 0x1a050000 0x00 0x8000>;
+			interrupts = <0x00 0x189 0x04>;
+		};
+
+	cam2_inner@1a058000 {
+			compatible = "mediatek,cam2_inner";
+			reg = <0x00 0x1a058000 0x00 0x8000>;
+		};
+
+	devapc_ao_mm@1001c000 {
+			compatible = "mediatek,devapc_ao_mm";
+			reg = <0x00 0x1001c000 0x00 0x1000>;
+		};
+
+	mm_vpu_m0_sub_common@1025e000 {
+			compatible = "mediatek,mm_vpu_m0_sub_common";
+			reg = <0x00 0x1025e000 0x00 0x1000>;
+		};
+
+	mm_vpu_m0_sub_common@10309000 {
+			compatible = "mediatek,mm_vpu_m0_sub_common";
+			reg = <0x00 0x10309000 0x00 0x1000>;
+		};
+
+	mm_vpu_m1_sub_common@1025f000 {
+			compatible = "mediatek,mm_vpu_m1_sub_common";
+			reg = <0x00 0x1025f000 0x00 0x1000>;
+		};
+
+	mm_vpu_m1_sub_common@1030a000 {
+			compatible = "mediatek,mm_vpu_m1_sub_common";
+			reg = <0x00 0x1030a000 0x00 0x1000>;
+		};
+
+	mm_vpu_m1_sub_common@1030b000 {
+			compatible = "mediatek,mm_vpu_m1_sub_common";
+			reg = <0x00 0x1030b000 0x00 0x1000>;
+		};
+
+	mm_vpu_m1_sub_common@1030c000 {
+			compatible = "mediatek,mm_vpu_m1_sub_common";
+			reg = <0x00 0x1030c000 0x00 0x1000>;
+		};
+
+	mm_vpu_m1_sub_common@1030d000 {
+			compatible = "mediatek,mm_vpu_m1_sub_common";
+			reg = <0x00 0x1030d000 0x00 0x1000>;
+		};
+
+	pseudo_m4u-vpu-code {
+			compatible = "mediatek,mt-pseudo_m4u-port";
+			mediatek,larbid = <0x19>;
+			iommus = <0x6d 0x2a0>;
+		};
+
+	pseudo_m4u-vpu-data {
+			compatible = "mediatek,mt-pseudo_m4u-port";
+			mediatek,larbid = <0x1a>;
+			iommus = <0x6d 0x2a1>;
+		};
+
+	pseudo_m4u-vpu-vlm {
+			compatible = "mediatek,mt-pseudo_m4u-port";
+			mediatek,larbid = <0x1b>;
+			iommus = <0x6d 0x2a2>;
+		};
+
+	vdec@16000000 {
+			compatible = "mediatek,mt6877-vcodec-dec";
+			reg = <0x00 0x1602f000 0x00 0x1000 0x00 0x16029800 0x00 0x400 0x00 0x16020000 0x00 0x400 0x00 0x16021000 0x00 0x1000 0x00 0x16023000 0x00 0x1000 0x00 0x16025000 0x00 0x1000>;
+			iommus = <0x63 0x80>;
+			mediatek,larb = <0x6f>;
+			interrupts = <0x00 0x200 0x04>;
+			mediatek,vcu = <0x7c>;
+			clocks = <0x67 0x00>;
+			clock-names = "MT_CG_VDEC";
+		};
+
+	vdec@16020000 {
+			compatible = "mediatek,vdec";
+			reg = <0x00 0x16020000 0x00 0xd000>;
+		};
+
+	vdec@1602d000 {
+			compatible = "mediatek,vdec";
+			reg = <0x00 0x1602d000 0x00 0x1000>;
+		};
+
+	vdec@1602e000 {
+			compatible = "mediatek,vdec";
+			reg = <0x00 0x1602e000 0x00 0x1000>;
+		};
+
+	vdec@1602f000 {
+			compatible = "mediatek,vdec";
+			reg = <0x00 0x1602f000 0x00 0x1000>;
+		};
+
+	vdec@16030000 {
+			compatible = "mediatek,vdec";
+			reg = <0x00 0x16030000 0x00 0xfd0000>;
+		};
+
+	vdec_gcon@16010000 {
+			compatible = "mediatek,vdec_gcon";
+			reg = <0x00 0x16010000 0x00 0x8000>;
+		};
+
+	venc@17000000 {
+			compatible = "mediatek,mt6877-vcodec-enc";
+			reg = <0x00 0x17020000 0x00 0x2000>;
+			iommus = <0x63 0xe5>;
+			mediatek,larb = <0x70>;
+			interrupts = <0x00 0x17e 0x04>;
+			mediatek,vcu = <0x7c>;
+			clocks = <0x7d 0x01>;
+			clock-names = "MT_CG_VENC";
+		};
+
+	venc@17020000 {
+			compatible = "mediatek,venc";
+			reg = <0x00 0x17020000 0x00 0x10000>;
+		};
+
+	venc_gcon@17000000 {
+			compatible = "mediatek,venc_gcon";
+			reg = <0x00 0x17000000 0x00 0x10000>;
+		};
+
+	vpu_core0: vpu_core0@19030000 {
+			iram-data = <0x00 0x10000 0x860000>;
+			algo = <0x00 0x60000 0x800000>;
+			pre-bin = <0x887000>;
+			img-head = <0x881000>;
+			bin-size = <0x1030000>;
+			bin-phy-addr = <0xb88d0000>;
+			compatible = "mediatek,vpu_core0";
+			reg = <0x00 0x19030000 0x00 0x1000 0x00 0x1d400000 0x00 0x40000 0x00 0x1d440000 0x00 0x30000 0x00 0xd190000 0x00 0x4000>;
+			interrupts = <0x00 0x1fb 0x04>;
+			id = <0x00>;
+			reset-vector = <0x7da00000 0x100000 0x00>;
+			main-prog = <0x7db00000 0x300000 0x100000>;
+			kernel-lib = <0x7de00000 0x500000 0xffffffff>;
+			work-buf = <0x00 0x12000 0xffffffff>;
+			iommus = <0x6d 0x2a0>;
+			phandle = <0x2d>;
+		};
+
+	vpu_core1: vpu_core1@19031000 {
+			iram-data = <0x00 0x10000 0x870000>;
+			compatible = "mediatek,vpu_core1";
+			reg = <0x00 0x19031000 0x00 0x1000 0x00 0x1d500000 0x00 0x40000 0x00 0x1d540000 0x00 0x30000 0x00 0xd194000 0x00 0x4000>;
+			interrupts = <0x00 0x1fc 0x04>;
+			id = <0x01>;
+			reset-vector = <0x7e300000 0x100000 0x400000>;
+			main-prog = <0x7e400000 0x300000 0x500000>;
+			kernel-lib = <0x7e700000 0x500000 0xffffffff>;
+			work-buf = <0x00 0x12000 0xffffffff>;
+			iommus = <0x6d 0x2a0>;
+			phandle = <0x2e>;
+		};
+

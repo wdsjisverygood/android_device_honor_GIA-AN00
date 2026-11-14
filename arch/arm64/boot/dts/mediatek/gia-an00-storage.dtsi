@@ -1,0 +1,131 @@
+// SPDX-License-Identifier: GPL-2.0
+/*
+ * HONOR GIA-AN00 / MT6877V/ZA 设备树分片
+ * 由实机反编译 device.dts 自动还原，节点内容保持原样
+ */
+
+/* 9 个顶层节点 */
+
+	flashlight_core: flashlight_core {
+			compatible = "mediatek,flashlight_core";
+			phandle = <0x18e>;
+		};
+
+	flashlights_mt6360: flashlights_mt6360 {
+			compatible = "mediatek,flashlights_mt6360";
+			decouple = <0x01>;
+			phandle = <0x18f>;
+	
+			channel@1 {
+				type = <0x00>;
+				ct = <0x00>;
+				part = <0x00>;
+			};
+	
+			channel@2 {
+				type = <0x00>;
+				ct = <0x01>;
+				part = <0x00>;
+			};
+		};
+
+	msdc0: msdc@11230000 {
+			compatible = "mediatek,msdc";
+			reg = <0x00 0x11230000 0x00 0x10000>;
+			interrupts = <0x00 0x83 0x04>;
+			index = [00];
+			clk_src = [01];
+			bus-width = <0x08>;
+			max-frequency = <0xbebc200>;
+			cap-mmc-highspeed;
+			mmc-ddr-1_8v;
+			mmc-hs200-1_8v;
+			mmc-hs400-1_8v;
+			no-sd;
+			no-sdio;
+			non-removable;
+			pinctl = <0x42>;
+			pinctl_hs400 = <0x43>;
+			pinctl_hs200 = <0x44>;
+			register_setting = <0x45>;
+			host_function = [00];
+			bootable;
+			status = "okay";
+			vmmc-supply = <0x46>;
+			vcore-supply = <0x47>;
+			clocks = <0x40 0x18 0x40 0x16 0x40 0x3e 0x48 0x91 0x49 0x00>;
+			clock-names = "msdc0-clock", "msdc0-hclock", "msdc0-aes-clock", "msdc0-src-hclk", "msdc0-newrx-clock";
+			phandle = <0xf9>;
+		};
+
+	msdc0_top@11f50000 {
+			compatible = "mediatek,msdc0_top";
+			reg = <0x00 0x11f50000 0x00 0x1000>;
+		};
+
+	msdc1: msdc@11240000 {
+			compatible = "mediatek,msdc";
+			reg = <0x00 0x11240000 0x00 0x1000>;
+			interrupts = <0x00 0x87 0x04>;
+			index = [01];
+			clk_src = [02];
+			bus-width = <0x04>;
+			max-frequency = <0xbebc200>;
+			cap-sd-highspeed;
+			cap-mmc-highspeed;
+			sd-uhs-sdr12;
+			sd-uhs-sdr25;
+			sd-uhs-sdr50;
+			sd-uhs-sdr104;
+			sd-uhs-ddr50;
+			mmc-ddr-1_8v;
+			mmc-hs200-1_8v;
+			no-sdio;
+			pinctl = <0x4a>;
+			pinctl_sdr104 = <0x4b>;
+			pinctl_sdr50 = <0x4c>;
+			pinctl_ddr50 = <0x4d>;
+			pinctl_hs200 = <0x4e>;
+			register_setting = <0x4f>;
+			host_function = [01];
+			cd_level = [01];
+			cd-gpios = <0x02 0x03 0x00>;
+			status = "okay";
+			vmmc-supply = <0x50>;
+			vqmmc-supply = <0x51>;
+			clocks = <0x40 0x1e 0x40 0x17>;
+			clock-names = "msdc1-clock", "msdc1-hclock";
+			phandle = <0xfa>;
+		};
+
+	msdc1_ins: msdc1_ins {
+			phandle = <0x14b>;
+		};
+
+	msdc1_top@11c70000 {
+			compatible = "mediatek,msdc1_top";
+			reg = <0x00 0x11c70000 0x00 0x1000>;
+		};
+
+	ufs_mphy@11fa0000 {
+			compatible = "mediatek,ufs_mphy";
+			reg = <0x00 0x11fa0000 0x00 0xc000>;
+		};
+
+	ufshci: ufshci@11270000 {
+			compatible = "mediatek,ufshci";
+			reg = <0x00 0x11270000 0x00 0x2300>;
+			interrupts = <0x00 0x89 0x04>;
+			clocks = <0x40 0x31 0x40 0x2b 0x40 0x2c 0x40 0x32 0x40 0x3e 0x48 0xb4>;
+			clock-names = "ufs-clk", "ufs-unipro-clk", "ufs-mp-clk", "ufs-crypto-clk";
+			freq-table-hz = <0x00 0x00 0x00 0x00 0x00 0x00 0x00 0x00>;
+			lanes-per-direction = <0x02>;
+			highspeed-gear = <0x04>;
+			mediatek,auto-hibern8-timer = <0x0a>;
+			mediatek,spm-level = <0x03>;
+			mediatek,rpm-enable = <0x01>;
+			mediatek,rpm-autosuspend-delay = <0x7d0>;
+			mediatek,rpm-level = <0x03>;
+			phandle = <0x14a>;
+		};
+

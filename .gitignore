@@ -1,0 +1,5 @@
+*.dtb
+!dtbo/*.dtb
+!arch/arm64/boot/dts/mediatek/*.dtb
+*.tmp
+.DS_Store

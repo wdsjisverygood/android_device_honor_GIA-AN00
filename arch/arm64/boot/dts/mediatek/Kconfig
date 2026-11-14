@@ -1,0 +1,10 @@
+# SPDX-License-Identifier: GPL-2.0
+if ARCH_MEDIATEK
+
+config ARCH_GIA_AN00
+	bool "HONOR GIA-AN00 (MT6877V/ZA)"
+	depends on ARCH_MEDIATEK
+	help
+	  HONOR GIA-AN00 / 荣耀 60 SE，MTK MT6877 天玑 900。
+
+endif
