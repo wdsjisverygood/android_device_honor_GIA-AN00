@@ -48,7 +48,7 @@ BOARD_MKBOOTIMG_ARGS += --ramdisk_offset $(BOARD_RAMDISK_OFFSET)
 BOARD_MKBOOTIMG_ARGS += --tags_offset $(BOARD_TAGS_OFFSET)
 
 # ===== 分区：A/B + 动态分区 =====
-AB_OTA_UPDATER := true
+# AB_OTA_UPDATER 由运行时 slot 检测，构建 recovery 不需要
 BOARD_USES_METADATA_PARTITION := true
 BOARD_SUPER_PARTITION_SIZE := 9227468800
 BOARD_SUPER_PARTITION_GROUPS := honor_dynamic_partitions
