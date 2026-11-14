@@ -1,7 +1,7 @@
 # Honor 60 SE (GIA-AN00) 设备树 / Device Tree Source
 
 荣耀 60 SE（HONOR 60 SE，型号 `GIA-AN00`）的完整设备树源码，从实机提取、反编译、切分，
-并与内核运行时活树逐节点核对过。原厂 Magic UI 6.1（Android 12）提取，
+并与内核运行时活树逐节点核对过。原厂 Magic UI 6.1.0.175（Android 12）提取，
 适用于内核移植、GSI 适配、TWRP 移植与硬件研究。
 
 Complete device tree for the **Honor 60 SE (GIA-AN00, MediaTek MT6877V/ZA)**,
