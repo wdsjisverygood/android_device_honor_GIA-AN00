@@ -1,0 +1,31 @@
+# TWRP fstab — Honor 60 SE (GIA-AN00)
+# 源自原机 recovery.fstab + first_stage_ramdisk/fstab.mt6877
+
+# <mount point>   <fs type>   <device>                                        <flags>
+/boot             emmc        /dev/block/by-name/boot                         defaults
+/recovery         emmc        /dev/block/by-name/recovery                     defaults
+/misc             emmc        /dev/block/by-name/misc                         defaults
+/log              ext4        /dev/block/by-name/log                          defaults
+/cache            ext4        /dev/block/by-name/cache                        defaults
+/persist          ext4        /dev/block/by-name/persist                      defaults
+/metadata         ext4        /dev/block/by-name/metadata                     defaults
+/nvdata           ext4        /dev/block/by-name/nvdata                       defaults
+/nvcfg            ext4        /dev/block/by-name/nvcfg                        defaults
+/protect_f        ext4        /dev/block/by-name/protect1                     defaults
+/protect_s        ext4        /dev/block/by-name/protect2                     defaults
+/cust             ext4        /dev/block/by-name/cust                         defaults
+/version          ext4        /dev/block/by-name/version                      defaults
+
+# 动态分区（super 内，TWRP 会自动映射）
+/system_root      ext4        /dev/block/by-name/system                       defaults
+/vendor           ext4        /dev/block/by-name/vendor                       defaults
+/product_h        ext4        /dev/block/by-name/product_h                    defaults
+/system_ext       ext4        /dev/block/by-name/system_ext                   defaults
+/odm              ext4        /dev/block/by-name/odm                          defaults
+
+# 数据区（FBE 加密）
+/data             f2fs        /dev/block/by-name/userdata                     defaults
+
+# 外部存储
+/external_sd      vfat        /dev/block/mmcblk1p1                            defaults
+/usb_otg          vfat        /dev/block/sda1                                 defaults

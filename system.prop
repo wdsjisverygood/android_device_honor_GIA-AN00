@@ -1,0 +1,6 @@
+ro.product.device=HNGIA-M
+ro.product.model=GIA-AN00
+ro.board.platform=mt6877
+ro.boot.hardware=mt6877
+ro.sf.lcd_density=480
+ro.twrp.device=GIA-AN00

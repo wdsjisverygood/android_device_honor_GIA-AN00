@@ -1,0 +1,2 @@
+add_lunch_combo twrp_gia-eng
+add_lunch_combo twrp_gia-userdebug
