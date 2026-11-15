@@ -97,7 +97,6 @@ TARGET_NO_BOOTLOADER := true
 TARGET_NO_RADIOIMAGE := true
 ALLOW_MISSING_DEPENDENCIES := true
 
-# 避免 /vendor 被做成符号链接（TWRP prebuilt 会创建真实 vendor 目录）
+# /vendor 必须是真实目录（TWRP prebuilt 会在 recovery/root/vendor 写入）
 TARGET_COPY_OUT_VENDOR := vendor
-TARGET_COPY_OUT_ODM := odm
-TARGET_COPY_OUT_PRODUCT := product
+BOARD_VENDORIMAGE_FILE_SYSTEM_TYPE := ext4
